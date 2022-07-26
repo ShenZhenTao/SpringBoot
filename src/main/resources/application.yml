@@ -1,0 +1,23 @@
+server:
+  port: 9091
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/acgfun?serverTimezone=GMT%2b8
+    username: root
+    password: 123456
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml #扫描所有mybatis的xml文件
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: false
+
+files:
+  upload:
+    path: C:/Users/20625/Desktop/files/
+
+

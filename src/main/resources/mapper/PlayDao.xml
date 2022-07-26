@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?> <!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.PlayDao">
+    <delete id="del">
+        delete from play where playId=#{playId}
+    </delete>
+
+        <delete id="delBatch" parameterType="java.lang.Integer">
+            delete from play where playId in
+            <foreach item="ids" collection="list" open="(" separator="," close=")">
+                #{ids}
+            </foreach>
+        </delete>
+
+    <select id="findVidePlay" resultType="com.example.entity.Play">
+        select play.*
+        from video,play
+        where play.videoId=video.videoId
+        and video.videoId=#{videoId}
+        order by part
+    </select>
+
+</mapper>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?> <!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.VideoDao">
+<!--    <resultMap id="BaseResultMap" type="com.example.entity.Video">-->
+<!--        <id column="videoId" jdbcType="INTEGER" property="videoId" />-->
+<!--        <result column="title" jdbcType="VARCHAR" property="title" />-->
+<!--        <result column="introduction" jdbcType="INTEGER" property="introduction" />-->
+<!--        <result column="director" jdbcType="VARCHAR" property="director"/>-->
+<!--        <result column="imageUrl" jdbcType="VARCHAR" property="imageUrl"/>-->
+<!--        <result column="actors" jdbcType="VARCHAR" property="actors"/>-->
+<!--        <result column="typeId" jdbcType="INTEGER" property="typeId"/>-->
+<!--        <result column="popularity" jdbcType="INTEGER" property="popularity"/>-->
+<!--    </resultMap>-->
+<!--    <select id="Base_Column_List">-->
+<!--        videoId,title,introduction,director,imageUrl,actors,typeId,popularity-->
+<!--    </select>-->
+    <select id="findVideoByArea" parameterType="String"  resultType="com.example.entity.Video">
+        select video.*
+        from video,area,type
+        where video.typeId=type.typeId
+          and type.areaId=area.areaId
+          and area.areaName=#{areaName}
+            limit 12
+    </select>
+
+    <select id="findNewVideo" parameterType="String" resultType="com.example.entity.Video">
+        select video.* from video,type,year
+        where video.typeId=type.typeId
+          and type.yearId=year.yearId
+          and year.year=#{year}
+            limit 6
+    </select>
+
+
+</mapper>

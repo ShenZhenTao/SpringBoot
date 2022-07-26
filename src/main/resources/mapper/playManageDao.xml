@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?> <!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.PlayManageDao">
+    <select id="findPlayPage" resultType="com.example.entity.PlayManage">
+        select play.*,video.title
+        from play,video
+        <where>
+            play.videoId=video.videoId
+            <if test="title!=''">
+                and video.title like "%"#{title}"%"
+            </if>
+            <if test="part!=''">
+                and play.part=#{part}
+            </if>
+        </where>
+        limit #{start},#{pageSize}
+    </select>
+    <select id="selectCount" resultType="java.lang.Integer">
+        select count(*)
+        from play,video
+        <where>
+            play.videoId=video.videoId
+            <if test="title!=''">
+                and video.title=#{title}
+            </if>
+            <if test="part!=''">
+                and play.part=#{part}
+            </if>
+        </where>
+    </select>
+
+</mapper>
