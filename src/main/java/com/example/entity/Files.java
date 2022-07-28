@@ -8,7 +8,7 @@ import lombok.Data;
 @TableName("sysfile")
 public class Files {
     @TableId
-    private Integer id;
+    private Integer avatarId;
     private String name;
     private String type;
     private Long size;

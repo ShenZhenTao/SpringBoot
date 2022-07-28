@@ -1,9 +1,9 @@
 package com.example.controller;
 
-import com.auth0.jwt.JWT;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.example.common.Result;
 import com.example.entity.Play;
 import com.example.entity.PlayManage;
 import com.example.entity.User;
@@ -129,7 +129,19 @@ public class BackstageController {
         }
 
         User user=userService.getById(Integer.valueOf(TokenUtils.getCurrentUser()));
-        System.out.println("user对象：==============="+user);
         return videoService.page(page,queryWrapper);
     }
+
+    @GetMapping("/userInfo")
+    public Result userInfo(@RequestParam String account){
+//        return userService.findUserInfo(account);
+        return Result.success(userService.findUserInfo(account));
+    }
+
+    @PostMapping("/updateUser")
+    public Result updateUser(@RequestBody User user){
+        return userService.updateUser(user);
+    }
+
+
 }

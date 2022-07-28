@@ -18,17 +18,6 @@ import java.util.Date;
 
 public class TokenUtils {
 
-//    @Autowired
-//    public static UserService staticUserService;
-
-//    @Resource
-//    private UserService userService;
-//
-//    @PostConstruct
-//    public void setStaticUserService(){
-//
-//        staticUserService=userService;
-//    }
 
     /*
     * 生成token
@@ -50,18 +39,5 @@ public class TokenUtils {
         String token=request.getHeader("token");
         Integer userId = Integer.valueOf(JWT.decode(token).getAudience().get(0));
         return userId;
-//        if (token!="") {
-//            try {
-//                String userId = JWT.decode(token).getAudience().get(0);
-//                System.out.println("用户的id是：============================="+Integer.valueOf(userId));
-//                User user=staticUserService.getById(Integer.valueOf(userId));
-//                System.out.println("user对象是：============================="+user);
-//                return user;
-//            }catch (Exception e){
-//                return null;
-//            }
-//        }
-//        return null;
-
     }
 }

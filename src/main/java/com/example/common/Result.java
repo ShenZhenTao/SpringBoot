@@ -23,6 +23,10 @@ public class Result {
         return  new Result(Constants.CODE_200,"登录成功",data);
     }
 
+    public static Result success(Object data,String msg){
+        return  new Result(Constants.CODE_200,msg,data);
+    }
+
     public static Result error(String code,String msg){
         return  new Result(code,msg,null);
     }

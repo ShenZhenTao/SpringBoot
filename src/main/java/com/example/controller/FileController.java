@@ -44,11 +44,9 @@ public class FileController {
         String fileUid=uid+StrUtil.DOT+type;
         File uploadFile=new File(fileUploadPath+fileUid);
 //        获取文件的md5
-//        String md5= SecureUtil.md5(uploadFile);
         String md5=SecureUtil.md5(file.getInputStream());
 //        查询文件的md5
         Files files=getFileByMd5(md5);
-        System.out.println("此时files为：====================="+files);
         String url;
         if (files!=null){
             url=files.getUrl();

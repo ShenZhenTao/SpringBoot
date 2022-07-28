@@ -5,4 +5,5 @@ import com.example.entity.Play;
 import com.example.entity.User;
 
 public interface UserDao extends BaseMapper<User> {
+    User findUserInfo(String account);
 }
