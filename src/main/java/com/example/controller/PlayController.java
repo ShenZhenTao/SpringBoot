@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.example.common.Result;
 import com.example.entity.Play;
 import com.example.service.PlayService;
 import org.springframework.web.bind.annotation.*;
@@ -15,21 +16,21 @@ public class PlayController {
 
 
     @GetMapping("/play")
-    public List<Play> findVidePlay(@RequestParam Integer id){
+    public Result findVidePlay(@RequestParam Integer id){
 
         QueryWrapper<Play> queryWrapper=new QueryWrapper();
         queryWrapper.eq("videoId",id);
         queryWrapper.last("order by part");
-        return playService.list(queryWrapper);
+        return Result.success(playService.list(queryWrapper));
     }
 
     @GetMapping("/playVideo")
-    public List<Play> findVideoPart(@RequestParam Integer id,
+    public Result findVideoPart(@RequestParam Integer id,
                                     @RequestParam Integer part){
         QueryWrapper<Play> queryWrapper=new QueryWrapper();
         queryWrapper.eq("videoId",id);
         queryWrapper.eq("part",part);
-        return playService.list(queryWrapper);
+        return Result.success(playService.list(queryWrapper));
     }
 
 //    @GetMapping(value = "/playVideo",produces = "video/mp4")

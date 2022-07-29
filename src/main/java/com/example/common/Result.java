@@ -20,7 +20,7 @@ public class Result {
     }
 
     public static Result success(Object data){
-        return  new Result(Constants.CODE_200,"登录成功",data);
+        return  new Result(Constants.CODE_200,"操作成功",data);
     }
 
     public static Result success(Object data,String msg){

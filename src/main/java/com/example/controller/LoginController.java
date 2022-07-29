@@ -12,7 +12,7 @@ import javax.annotation.Resource;
 
 @RestController
 @RequestMapping
-public class UserController {
+public class LoginController {
     @Resource
     UserService userService;
 
@@ -24,7 +24,7 @@ public class UserController {
         if(StringUtils.isBlank(account)||StringUtils.isBlank(password))
             return Result.error(Constants.CODE_400,"参数错误");
         UserDTO dto= userService.login(userDTO);
-        return Result.success(dto);
+        return Result.success(dto,"登录成功");
     }
 
 

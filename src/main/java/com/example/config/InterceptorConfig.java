@@ -11,7 +11,7 @@ public class InterceptorConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(jwtInterceptor())
-                .addPathPatterns("/backstage/**") ;//拦截所有请求
+                .addPathPatterns("/backstage/**") ;//拦截backstage路径下的所有请求
 //                .excludePathPatterns("/login","**/export","**/import");
     }
 
