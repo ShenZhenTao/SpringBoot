@@ -12,8 +12,11 @@ import com.example.service.PlayService;
 import com.example.service.UserService;
 import com.example.service.VideoService;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -138,5 +141,33 @@ public class BackstageController {
         return userService.updateUser(user);
     }
 
+    //    导出番剧信息
+    @GetMapping("/test/downloadVideo")
+    public Result downloadVideo(
+            @RequestParam(defaultValue = "") String title,
+            @RequestParam(defaultValue = "") String plot,
+            @RequestParam(defaultValue = "") String area,
+            HttpServletResponse response) throws IOException {
+
+        videoService.dowloadVideo(title, plot, area, response);
+        return null;
+    }
+
+//    导出剧集信息
+    @GetMapping("/test/downloadPlay")
+    public Result download(
+            @RequestParam(defaultValue = "") String title,
+            @RequestParam(defaultValue = "") Integer part,
+            HttpServletResponse response)throws IOException{
+
+        playManageService.downloadPlay(title,part,response);
+        return null;
+    }
+
+//    导入番剧信息
+    public Result uploadVideo(MultipartFile file){
+
+        return Result.success();
+    }
 
 }

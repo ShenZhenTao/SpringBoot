@@ -20,7 +20,7 @@ public class User {
     private String account;  //登录账号
     private String password;
     private String status;  //管理员身份
-    private String avatarId; //用户头像外键
+    private Integer avatarId; //用户头像外键
     private String telephone;//电话号码
     private String address; //居住地
     private String contactAddress;//联系地址

@@ -9,7 +9,6 @@ public class UserDTO {
     private String username;
     private String password;
     private String account;
-//    private String avatarUrl;
     private String token;
     private String status;
 }

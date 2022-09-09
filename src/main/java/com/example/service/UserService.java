@@ -51,7 +51,7 @@ public class UserService extends ServiceImpl<UserDao, User> {
     }
 
     public Result updateUser(User user){
-        User userDb=userDao.selectById(Integer.valueOf(TokenUtils.getCurrentUser()));
+        User userDb=userDao.selectById(TokenUtils.getCurrentUser());
 //        如果是超级管理员则可以修改所有用户的信息
         if (userDb.getStatus().equals("Administrator")){
             return Result.success(userDao.updateById(user) != 0,"修改成功");

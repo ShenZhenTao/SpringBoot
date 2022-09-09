@@ -15,8 +15,11 @@ public class Result {
     private String msg;
     private Object data;
 
+    public static Result success(String msg){
+        return  new Result(Constants.CODE_200,msg,null);
+    }
     public static Result success(){
-        return  new Result(Constants.CODE_200,"",null);
+        return  new Result(Constants.CODE_200,"操作成功",null);
     }
 
     public static Result success(Object data){
