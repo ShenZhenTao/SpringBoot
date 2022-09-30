@@ -1,4 +1,4 @@
-package com.example.controller.dto;
+package com.example.entity.dto;
 
 import lombok.Data;
 /*

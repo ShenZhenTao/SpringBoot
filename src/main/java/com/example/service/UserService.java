@@ -5,7 +5,7 @@ import cn.hutool.log.Log;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.common.Constants;
-import com.example.controller.dto.UserDTO;
+import com.example.entity.dto.UserDTO;
 import com.example.entity.User;
 import com.example.exception.ServiceException;
 import com.example.mapper.UserDao;
