@@ -2,20 +2,18 @@ package com.example.service;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.log.Log;
-import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.common.Constants;
 import com.example.common.Result;
-import com.example.controller.dto.UserDTO;
 import com.example.entity.User;
+import com.example.entity.dto.UserDTO;
 import com.example.exception.ServiceException;
 import com.example.mapper.UserDao;
 import com.example.utils.TokenUtils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.sql.SQLSyntaxErrorException;
 
 @Service
 public class UserService extends ServiceImpl<UserDao, User> {

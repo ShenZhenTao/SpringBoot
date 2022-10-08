@@ -2,15 +2,6 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.mapper.TbVideoHeatDao">
-
-    <resultMap type="TbVideoHeat" id="TbVideoHeatResult">
-        <result property="videoHeatId" column="video_heat_id"/>
-        <result property="videoId" column="video_id"/>
-        <result property="weekHeat" column="week_heat"/>
-        <result property="monthHeat" column="month_heat"/>
-        <result property="yearHeat" column="year_heat"/>
-    </resultMap>
-
     <sql id="TbVideoHeat">
         select video_heat_id,
                video_id,
