@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?> <!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.TbVideoHeatDao">
+
+    <resultMap type="TbVideoHeat" id="TbVideoHeatResult">
+        <result property="videoHeatId" column="video_heat_id"/>
+        <result property="videoId" column="video_id"/>
+        <result property="weekHeat" column="week_heat"/>
+        <result property="monthHeat" column="month_heat"/>
+        <result property="yearHeat" column="year_heat"/>
+    </resultMap>
+
+    <sql id="TbVideoHeat">
+        select video_heat_id,
+               video_id,
+               week_heat,
+               month_heat,
+               year_heat
+        from tb_video_heat
+    </sql>
+
+    <select id="selectTbVideoHeatById" resultType="com.example.entity.TbVideoHeat">
+        <include refid="TbVideoHeat" />
+        where video_heat_id = #{videoHeatId}
+    </select>
+    <select id="selectTbVideoHeatList" resultType="com.example.entity.TbVideoHeat">
+        <include refid="TbVideoHeat" />
+        <where>
+            <if test="videoHeatId != null">
+                and video_heat_id = #{videoHeatId}
+            </if>
+            <if test="videoId ！= null">
+                and video_id = #{videoId}
+            </if>
+            <if test="weekHeat ！= null">
+                and week_heat = #{weekHeat}
+            </if>
+            <if test="monthHeat ！= null">
+                and month_heat = #{monthHeat}
+            </if>
+            <if test="yearHeat ！= null">
+                and year_heat = #{yearHeat}
+            </if>
+        </where>
+    </select>
+
+</mapper>
