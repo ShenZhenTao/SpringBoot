@@ -2,11 +2,10 @@ package com.example.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.example.common.Result;
-import com.example.entity.Play;
-import com.example.service.PlayService;
+import com.example.domain.Play;
+import com.example.service.impl.PlayService;
 import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
-import java.util.List;
 
 @RestController
 @RequestMapping

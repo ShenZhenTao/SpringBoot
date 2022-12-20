@@ -4,13 +4,13 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.common.Result;
-import com.example.entity.Play;
-import com.example.entity.User;
-import com.example.entity.Video;
-import com.example.service.PlayManageService;
-import com.example.service.PlayService;
-import com.example.service.UserService;
-import com.example.service.VideoService;
+import com.example.domain.Play;
+import com.example.domain.User;
+import com.example.domain.Video;
+import com.example.service.impl.PlayManageService;
+import com.example.service.impl.PlayService;
+import com.example.service.impl.UserServiceImpl;
+import com.example.service.impl.VideoService;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -30,7 +30,7 @@ public class BackstageController {
     @Resource
     PlayManageService playManageService;
     @Resource
-    UserService userService;
+    UserServiceImpl userService;
 
 //    保存
     @PostMapping("/save")

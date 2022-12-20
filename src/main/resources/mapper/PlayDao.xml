@@ -13,7 +13,7 @@
             </foreach>
         </delete>
 
-    <select id="findVidePlay" resultType="com.example.entity.Play">
+    <select id="findVidePlay" resultType="com.example.domain.Play">
         select play.*
         from video,play
         where play.videoId=video.videoId

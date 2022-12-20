@@ -1,13 +1,11 @@
-package com.example.service;
+package com.example.service.impl;
 
 import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.write.builder.ExcelWriterBuilder;
 import com.alibaba.excel.write.builder.ExcelWriterSheetBuilder;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.common.Result;
-import com.example.entity.Play;
-import com.example.entity.PlayManage;
-import com.example.mapper.PlayDao;
+import com.example.domain.PlayManage;
 import com.example.mapper.PlayManageDao;
 import org.springframework.stereotype.Service;
 

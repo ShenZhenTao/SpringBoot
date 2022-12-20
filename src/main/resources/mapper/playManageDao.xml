@@ -2,7 +2,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.mapper.PlayManageDao">
-    <select id="findPlayPage" resultType="com.example.entity.PlayManage">
+    <select id="findPlayPage" resultType="com.example.domain.PlayManage">
         select play.*,video.title
         from play,video
         <where>
@@ -30,7 +30,7 @@
         </where>
     </select>
 
-    <select id="downloadPlay" resultType="com.example.entity.PlayManage">
+    <select id="downloadPlay" resultType="com.example.domain.PlayManage">
         select play.*,video.title
         from play,video
         <where>

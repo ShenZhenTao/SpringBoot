@@ -1,7 +1,7 @@
 package com.example.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.example.entity.Video;
+import com.example.domain.Video;
 import java.util.List;
 
 //@Mapper

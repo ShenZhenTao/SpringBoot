@@ -1,4 +1,4 @@
-package com.example.service;
+package com.example.service.impl;
 
 import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.write.builder.ExcelWriterBuilder;
@@ -6,7 +6,7 @@ import com.alibaba.excel.write.builder.ExcelWriterSheetBuilder;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.common.Result;
-import com.example.entity.Video;
+import com.example.domain.Video;
 import com.example.mapper.VideoDao;
 import net.sourceforge.pinyin4j.PinyinHelper;
 import org.springframework.stereotype.Service;

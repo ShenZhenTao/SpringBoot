@@ -11,11 +11,11 @@
         from tb_video_heat
     </sql>
 
-    <select id="selectTbVideoHeatById" resultType="com.example.entity.TbVideoHeat">
+    <select id="selectTbVideoHeatById" resultType="com.example.domain.TbVideoHeat">
         <include refid="TbVideoHeat" />
         where video_heat_id = #{videoHeatId}
     </select>
-    <select id="selectTbVideoHeatList" resultType="com.example.entity.TbVideoHeat">
+    <select id="selectTbVideoHeatList" resultType="com.example.domain.TbVideoHeat">
         <include refid="TbVideoHeat" />
         <where>
             <if test="videoHeatId != null">

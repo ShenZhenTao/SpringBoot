@@ -1,4 +1,4 @@
-package com.example.entity;
+package com.example.domain;
 
 import com.alibaba.excel.annotation.ExcelIgnore;
 import com.alibaba.excel.annotation.ExcelProperty;

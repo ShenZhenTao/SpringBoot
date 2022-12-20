@@ -12,7 +12,7 @@ public class InterceptorConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(jwtInterceptor())
                 .addPathPatterns("/backstage/**") //拦截backstage路径下的所有请求
-                .excludePathPatterns("/backstage/test/**");
+                .excludePathPatterns("/backstage/login");
     }
 
 //    将其注入到容器中

@@ -4,25 +4,55 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.mapper.UserDao">
 
-    <resultMap id="user" type="com.example.entity.User">
+    <resultMap id="user" type="com.example.domain.User">
         <result property="userId" column="userId"/>
         <result property="account" column="account"/>
         <result property="address" column="address"/>
-        <result property="contactAddress" column="contactAddress"/>
+<!--        <result property="contactAddress" column="contactAddress"/>-->
 <!--        <result property="password" column="password"/>-->
+        <result property="createTime" column="createTime"/>
         <result property="status" column="status"/>
         <result property="telephone" column="telephone"/>
         <result property="username" column="username"/>
-        <collection property="files" ofType="com.example.entity.Files">
+        <collection property="files" ofType="com.example.domain.Files">
             <result property="avatarId" column="avatarId"/>
             <result property="url" column="url"/>
         </collection>
     </resultMap>
+
+    <sql id="selectUserVo">
+        select userId,account,address,createTime,status,telephone,username
+        from user
+    </sql>
+
     <select id="findUserInfo" parameterType="java.lang.String" resultMap="user">
         select user.userId,user.account,user.address,user.contactAddress,user.status,user.telephone,user.username,
                sysfile.avatarId,sysfile.url
         from user,sysfile
         where user.avatarId=sysfile.avatarId
           and   user.account=#{account}
+    </select>
+
+    <select id="selectList"  resultMap="user">
+        <include refid="selectUserVo"/>
+        where
+        <if test="account != null and account != ''">
+            account like concat('%', #{account}, '%')
+        </if>
+        <if test="address != null and address != ''">
+            AND address like concat('%', #{address}, '%')
+        </if>
+        <if test="createTime != null and createTime != ''">
+            AND createTime like concat('%', #{createTime}, '%')
+        </if>
+        <if test="status != null and status != ''">
+            AND status = #{status}
+        </if>
+        <if test="telephone != null and telephone != ''">
+            AND telephone like concat('%', #{telephone}, '%')
+        </if>
+        <if test="username != null and username != ''">
+            AND username like concat('%', #{username}, '%')
+        </if>
     </select>
 </mapper>

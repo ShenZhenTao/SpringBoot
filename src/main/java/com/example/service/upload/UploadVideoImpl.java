@@ -1,9 +1,8 @@
 package com.example.service.upload;
 
 import com.alibaba.excel.EasyExcel;
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.example.entity.Video;
+import com.example.domain.Video;
 import com.example.exception.VideoListener;
 import com.example.mapper.VideoDao;
 import org.springframework.web.multipart.MultipartFile;

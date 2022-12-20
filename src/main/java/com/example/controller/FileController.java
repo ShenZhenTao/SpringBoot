@@ -1,6 +1,6 @@
 package com.example.controller;
 
-import com.example.service.FilesService;
+import com.example.service.impl.FilesService;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 

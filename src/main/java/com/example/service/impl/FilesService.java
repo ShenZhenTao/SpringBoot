@@ -1,4 +1,4 @@
-package com.example.service;
+package com.example.service.impl;
 
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.IdUtil;
@@ -6,7 +6,7 @@ import cn.hutool.core.util.StrUtil;
 import cn.hutool.crypto.SecureUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.example.entity.Files;
+import com.example.domain.Files;
 import com.example.mapper.FilesDao;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
