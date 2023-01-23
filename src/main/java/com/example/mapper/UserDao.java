@@ -7,5 +7,7 @@ import java.util.List;
 
 public interface UserDao extends BaseMapper<User> {
     User findUserInfo(String account);
-    List<User> selectList(User user);
+//    List<User> selectList(User user);
+
+
 }

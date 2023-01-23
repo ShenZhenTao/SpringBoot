@@ -30,7 +30,7 @@ public class UserServiceImpl extends ServiceImpl<UserDao, User> implements UserS
         queryWrapper.eq("password",userDTO.getPassword());
         User one;
         try{
-            one=getOne(queryWrapper);//从数据库查询用户信息
+            one= userDao.selectOne(queryWrapper);//从数据库查询用户信息
         }catch (Exception e){
             LOG.error(e);
             throw new ServiceException(Constants.CODE_500,"系统错误");

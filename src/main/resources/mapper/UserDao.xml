@@ -33,26 +33,27 @@
           and   user.account=#{account}
     </select>
 
-    <select id="selectList"  resultMap="user">
-        <include refid="selectUserVo"/>
-        where
-        <if test="account != null and account != ''">
-            account like concat('%', #{account}, '%')
-        </if>
-        <if test="address != null and address != ''">
-            AND address like concat('%', #{address}, '%')
-        </if>
-        <if test="createTime != null and createTime != ''">
-            AND createTime like concat('%', #{createTime}, '%')
-        </if>
-        <if test="status != null and status != ''">
-            AND status = #{status}
-        </if>
-        <if test="telephone != null and telephone != ''">
-            AND telephone like concat('%', #{telephone}, '%')
-        </if>
-        <if test="username != null and username != ''">
-            AND username like concat('%', #{username}, '%')
-        </if>
-    </select>
+<!--    <select id="selectList"  resultMap="user">-->
+<!--        <include refid="selectUserVo"/>-->
+<!--        where-->
+<!--        <if test="account != null and account != ''">-->
+<!--            account like concat('%', #{account}, '%')-->
+<!--        </if>-->
+<!--        <if test="address != null and address != ''">-->
+<!--            AND address like concat('%', #{address}, '%')-->
+<!--        </if>-->
+<!--        <if test="createTime != null and createTime != ''">-->
+<!--            AND createTime like concat('%', #{createTime}, '%')-->
+<!--        </if>-->
+<!--        <if test="status != null and status != ''">-->
+<!--            AND status = #{status}-->
+<!--        </if>-->
+<!--        <if test="telephone != null and telephone != ''">-->
+<!--            AND telephone like concat('%', #{telephone}, '%')-->
+<!--        </if>-->
+<!--        <if test="username != null and username != ''">-->
+<!--            AND username like concat('%', #{username}, '%')-->
+<!--        </if>-->
+<!--    </select>-->
+<!--    -->
 </mapper>
